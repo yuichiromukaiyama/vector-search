@@ -31,6 +31,10 @@ def search(query: dict):
 def init():
     return __client.recreate_collection(
         collection_name=COLLECTION,
-        hnsw_config=models.HnswConfigDiff(m=16, ef_construct=512),
+        hnsw_config=models.HnswConfigDiff(
+            m=16,
+            ef_construct=512,
+            full_scan_threshold=10000,
+        ),
         vectors_config=models.VectorParams(size=1536, distance=models.Distance.COSINE),
     )

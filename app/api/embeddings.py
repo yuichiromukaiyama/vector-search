@@ -2,7 +2,8 @@ from os import getenv
 from openai import AzureOpenAI
 from dotenv import load_dotenv
 
-load_dotenv(".env")
+# load_dotenv(".env")
+load_dotenv()
 
 OPENAI_KEY = getenv("OPENAI_KEY", "")
 OPENAI_BASE_DOMAIN = getenv("OPENAI_BASE_DOMAIN", "")
